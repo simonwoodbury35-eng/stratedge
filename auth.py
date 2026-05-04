@@ -24,7 +24,7 @@ def generate_reset_token(user_id: int) -> str:
     return token
 
 
-def send_reset_email(to_email: str, token: str, app_url: str = "http://localhost:8501"):
+def send_reset_email(to_email: str, token: str, app_url: str = "https://stratedge-7dguhxuprxzzgjwjflr23j.streamlit.app"):
     api_key = os.getenv("SENDGRID_API_KEY")
     sender = os.getenv("SENDGRID_EMAIL", "simonwoodbury35@gmail.com")
     reset_link = f"{app_url}?reset_token={token}"
